@@ -32,11 +32,11 @@ GitHub → **New → Repository** → `python_labs` → Public → Create.
 
 ### 2) Клонируйте и создайте папки
 ```bash
-git clone git@github.com<nickname>/python_labs.git
-cd  python_labs
-mkdir -p src images
-echo "# ЛР1" > README.md
-git add . && git commit -m "init lab01" && git push
+   git clone git@github.com<nickname>/python_labs.git
+   cd  python_labs
+   mkdir -p src images
+   echo "# ЛР1" > README.md
+   git add . && git commit -m "init lab01" && git push
 ```
 ![клонирование](../../misc/img/lab01/%20clone_init_commit.png)
 
@@ -54,7 +54,7 @@ python --version
 **Windows (PowerShell)**
 ```powershell
 py -m venv .venv
-.venv\Scripts\Activate.ps1
+.venv\Scripts\Activate.ps1 
 python --version
 ```
 ![Виртуальная среда](../../misc/img/lab01/venv.png)
