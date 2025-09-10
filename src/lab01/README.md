@@ -13,3 +13,6 @@
 ![Первая тасочка](https://github.com/4irillo/python_labs/raw/main/images/lab01/ex6.png)
 # 7. Задание со звездочкой 7
 ![Первая тасочка](https://github.com/4irillo/python_labs/raw/main/images/lab01/ex7.png)
+
+# Жду следующую лабу с удовольствием!!!
+![My beloved Poppy](https://github.com/4irillo/python_labs/raw/main/misc/gif/poppy.gif)
