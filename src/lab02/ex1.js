@@ -1,7 +1,7 @@
 import prompt from 'prompt-sync'// requires 'npm install prompt-sync'
-import * as tuple from '../libs/tuples.js';
-import * as arrays from '../libs/arrays.js';
-import * as matrixes from '../libs/matrixes.js';
+import * as tuple from '../lab02/libs/tuples.js';
+import * as arrays from '../lab02/libs/arrays.js';
+import * as matrixes from '../lab02/libs/matrixes.js';
 
 //Arrays
 //min_max

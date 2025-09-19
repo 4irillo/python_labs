@@ -21,6 +21,7 @@ export class Tuple {
         }
         //gpa
         this.gpa = gpa.toPrecision(3);
+        Object.freeze(this);
     }
     /**
      * 
