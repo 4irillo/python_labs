@@ -12,7 +12,7 @@ print("min_max")
 print(f"input: [3, -1, 5, 5, 0],  output: {min_max([3, -1, 5, 5, 0])}")
 print(f"input: [42],  output: {min_max([42])}")
 print(f"input: [-5, -2, -9],  output: {min_max([-5, -2, -9])}")
-print(min_max([])) #-- error test
+#print(min_max([])) #-- error test
 print(f"input: [1.5, 2, 2.0, -3.1],  output: {min_max([1.5, 2, 2.0, -3.1])}")
 # unique_sorted
 print("unique_sorted")
