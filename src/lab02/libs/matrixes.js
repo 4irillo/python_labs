@@ -1,4 +1,4 @@
-import * as arrays from "../libs/arrays.js"
+import * as arrays from "./arrays.js"
 
 export function transpose(a){
     //exceptions
