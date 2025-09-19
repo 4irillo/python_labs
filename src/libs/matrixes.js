@@ -1,4 +1,4 @@
-import * as arrays from "file://C:/Users/aaaaa/Desktop/python_bivt/libs/arrays.js"
+import * as arrays from "../libs/arrays.js"
 
 export function transpose(a){
     //exceptions
