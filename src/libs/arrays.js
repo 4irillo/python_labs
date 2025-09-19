@@ -39,7 +39,7 @@ export function unique_sorted(a) {
     if (!(a instanceof Array)) throw new TypeError("TypeError");
     //code    
     a.sort(comp);
-    return new Set(a);
+    return Array.from(new Set(a));
 }
 
 export function flatten(a)
