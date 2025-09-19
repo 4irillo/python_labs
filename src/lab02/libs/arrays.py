@@ -30,8 +30,10 @@ def unique_sorted(a):
     if not isinstance(a, list):
         raise TypeError("TypeError")
     # code    
+    a = set(a)
+    a = list(a)
     a.sort()
-    return list(set(a))
+    return a
 
 def flatten(a):
     # exceptions
