@@ -5,6 +5,7 @@ from libs.matrixes import transpose
 from libs.matrixes import row_sums
 from libs.matrixes import col_sums
 from libs.tuples import Tuple
+from libs.tuples import format_record
 
 # Arrays
 # min_max
@@ -58,4 +59,15 @@ print(f"input: (Петров Пётр, IKBO-12, 5.0),  output: {a}")
 a = Tuple("Петров Пётр Петрович", "IKBO-12", 5.0).format_record()
 print(f"input: (Петров Пётр Петрович, IKBO-12, 5.0),  output: {a}")
 a = Tuple("  сидорова  анна   сергеевна ", "ABB-01", 3.999).format_record()
+print(f"input: (  сидорова  анна   сергеевна , ABB-01, 3.999),  output: {a}")
+
+#Tuples 2.0
+print("tuples 2.0 ")
+a = format_record(("Иванов Иван Иванович", "BIVT-25", 4.6))
+print(f"input: (Иванов Иван Иванович, BIVT-25, 4.6),  output: {a}")
+a = format_record(("Петров Пётр", "IKBO-12", 5.0))
+print(f"input: (Петров Пётр, IKBO-12, 5.0),  output: {a}")
+a = format_record(("Петров Пётр Петрович", "IKBO-12", 5.0))
+print(f"input: (Петров Пётр Петрович, IKBO-12, 5.0),  output: {a}")
+a = format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999))
 print(f"input: (  сидорова  анна   сергеевна , ABB-01, 3.999),  output: {a}")

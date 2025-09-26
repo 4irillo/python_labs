@@ -53,3 +53,10 @@ console.log(`input: ("Иванов Иван Иванович", "BIVT-25", 4.6), 
 console.log(`input: ("Петров Пётр", "IKBO-12", 5.0),  output: ${new tuple.Tuple("Петров Пётр", "IKBO-12", 5.0).format_record()}`);
 console.log(`input: ("Петров Пётр Петрович", "IKBO-12", 5.0),  output: ${new tuple.Tuple("Петров Пётр Петрович", "IKBO-12", 5.0).format_record()}`);
 console.log(`input: ("  сидорова  анна   сергеевна ", "ABB-01", 3.999),  output: ${new tuple.Tuple("  сидорова  анна   сергеевна ", "ABB-01", 3.999).format_record()}`);
+
+//Tuples 2.0
+console.log("tuples 2.0")
+console.log(`input: ("Иванов Иван Иванович", "BIVT-25", 4.6),  output: ${tuple.format_record(["Иванов Иван Иванович", "BIVT-25", 4.6])}`);
+console.log(`input: ("Петров Пётр", "IKBO-12", 5.0),  output: ${tuple.format_record(["Петров Пётр", "IKBO-12", 5.0])}`);
+console.log(`input: ("Петров Пётр Петрович", "IKBO-12", 5.0),  output: ${tuple.format_record(["Петров Пётр Петрович", "IKBO-12", 5.0])}`);
+console.log(`input: ("  сидорова  анна   сергеевна ", "ABB-01", 3.999),  output: ${tuple.format_record(["  сидорова  анна   сергеевна ", "ABB-01", 3.999])}`);

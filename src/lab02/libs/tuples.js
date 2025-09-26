@@ -35,8 +35,15 @@ export class Tuple {
         }
         else
             var a = secondName + " " + firstNameShort + ".";
-        return `${a}, гр. ${this.group}, GPA ${this.gpa}`
+        return `${a}, гр. ${this.group}, GPA ${this.gpa}`;
     }
 
+
+}
+
+export function format_record(array)
+{
+    if (!Array.isArray(array) || !array.length === 3) throw new TypeError("Wrong data!");
+    return  new Tuple(array[0], array[1], array[2]).format_record()
 
 }
