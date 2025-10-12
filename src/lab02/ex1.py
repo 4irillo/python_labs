@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from libs.arrays import flatten
 from libs.arrays import min_max
 from libs.arrays import unique_sorted
