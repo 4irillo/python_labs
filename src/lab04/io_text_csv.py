@@ -11,7 +11,10 @@ def read_text(path: str | pathlib.Path, encoding: str = "utf-8") -> str:
     return content
 
 def write_csv(rows: list[tuple | list], path: str | pathlib.Path, header: tuple[str, ...] | None = None) -> None:
-    with open(path, 'w', newline="") as file:
-        w= writer(file)
-        if (header != None): w.writerows(header)
-        w.writerows(rows)
+    try:
+        with open(path, 'w', newline="") as file:
+            w= writer(file)
+            if (header != None): w.writerows(header)
+            w.writerows(rows)
+    catch:
+        raise Error("No such file or directory")
