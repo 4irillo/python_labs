@@ -1,1 +1,0 @@
-__GL_SHADER_DISK_CACHE=1 MESA_SHADER_CACHE_DIR="$HOME/.cache/mesa_shaders" SDL_VIDEODRIVER=windows,wayland %command% -novid -nojoy -novsync -threads 16 -vulkan -f -fullscreen -preload -high +exec autoexec  +@panorama_min_comp_layer_cache_cost_TURNED_OFF 256
