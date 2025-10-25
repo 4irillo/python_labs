@@ -74,3 +74,5 @@ a = format_record(("Петров Пётр Петрович", "IKBO-12", 5.0))
 print(f"input: (Петров Пётр Петрович, IKBO-12, 5.0),  output: {a}")
 a = format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999))
 print(f"input: (  сидорова  анна   сергеевна , ABB-01, 3.999),  output: {a}")
+
+#test commit
