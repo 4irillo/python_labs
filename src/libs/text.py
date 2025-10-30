@@ -21,7 +21,7 @@ def count_freq(tokens: list[str]) -> dict[str, int]:
             freq[token] = 1
     return dict(sorted(freq.items(), key=lambda item: (-item[1], item[0])))
 
-def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
+def top_n(freq: dict[str, int], n: int) -> list[tuple[str, int]]:
     temp = []
     cnt = 0
     for token in freq.items():
@@ -30,16 +30,15 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
         if (cnt == n or cnt == len(freq)): break
     return temp
 
-def summarize(string: str) -> None:
+def summarize(string: str, n: int) -> None:
     tokenized = tokenize(string)
     unique_words = count_freq(tokenized)
     print(f"Всего слов: {len(tokenized)}")
     print(f"Уникальных слов: {len(unique_words)}")
-    n = 5
     print(f"Топ-{n}:")
-    k = top_n(unique_words)
+    k = top_n(unique_words, n)
     for token in k:
-        print(token[0] + ":" + str(token[1]))
+        print("\t"+token[0] + ":" + str(token[1]))
     return None
 
 '''print("normalize")

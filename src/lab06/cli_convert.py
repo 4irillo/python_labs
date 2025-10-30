@@ -2,16 +2,13 @@ import argparse
 import sys
 import os
 from pathlib import Path
-
-# Добавляем корень проекта в sys.path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-# Импортируем функции из lab05
 try:
     from lab05.json_csv import json_to_csv, csv_to_json
     from lab05.csv_xlsx import csv_to_xlsx
 except ImportError:
-    print("Error: lab05/converters.py not found or broken", file=sys.stderr)
+    print("Error: lab05/json_csv.py or lab05/cvs_xlsx not found or broken", file=sys.stderr)
     sys.exit(1)
 
 
@@ -50,12 +47,8 @@ def main():
             parser.print_help()
             sys.exit(1)
     except FileNotFoundError as e:
-        print(f"Error: {e}", file=sys.stderr)
+        print(f"Error: File not found — '{e}'", file=sys.stderr)
         sys.exit(1)
-    except Exception as e:
-        print(f"Unexpected error: {e}", file=sys.stderr)
-        sys.exit(1)
-
 
 if __name__ == "__main__":
     main()
