@@ -13,7 +13,6 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
             if not temp:
                 raise ValueError("Empty JSON or unsupported structure")
             fieldnames = temp[0].keys()
-            import csv
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(temp)
@@ -24,7 +23,6 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 def csv_to_json(csv_path: str, json_path: str) -> None:
     try: 
         with Path(csv_path).open('r', encoding="utf-8") as f:
-            import csv
             reader = csv.DictReader(f)
             temp = []
             for row in reader:
