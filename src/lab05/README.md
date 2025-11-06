@@ -3,6 +3,7 @@
 # Первое задание
 ``` python
 def json_to_csv(json_path: str, csv_path: str) -> None:
+    if (csv_path[-4:]!='.csv'): raise ValueError('Inappropiate output file.') 
     try:
         with Path(json_path).open('r', encoding="utf-8") as f:
             temp = json.load(f)
@@ -21,6 +22,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
+    if (json_path[-5:]!='.json'): raise ValueError('Inappropiate output file.') 
     try: 
         with Path(csv_path).open('r', encoding="utf-8") as f:
             reader = csv.DictReader(f)
@@ -34,6 +36,7 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
             json.dump(temp, fp=f)
     except:
         raise FileNotFoundError(f'No such .json file.')
+
 ```
 Я не знаю что тут надо писать, закинул экспешены на пустые файлы, если read файл не находится, библиотека сама ругается, если out файл не находится, он создается, мне кажется удобно
 
@@ -41,6 +44,7 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 # Второе задание
 ``` python
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
+    if (xlsx_path[-5:]!=('.xlsx' or '.xlsm' or '.xltx' or '.xltm')): raise ValueError('Inappropiate output file.') 
     wb = Workbook()
     ws = wb.active
     ws.title = "Sheet1"
@@ -50,7 +54,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
                 ws.append(row)
             wb.save(xlsx_path)
     except: 
-        raise FileNotFoundError(f'No such .csv file.')
+        raise FileNotFoundError(f'No such .{xlsx_path[-5:]} file.')
 ```
 Супер тупо, супер напрямую, но функционирует. Главное — не подсовывать пустые файлы или мусор :)  
 

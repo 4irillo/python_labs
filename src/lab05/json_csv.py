@@ -4,6 +4,7 @@ from pathlib import Path
 
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
+    if (csv_path[-4:]!='.csv'): raise ValueError('Inappropiate output file.') 
     try:
         with Path(json_path).open('r', encoding="utf-8") as f:
             temp = json.load(f)
@@ -23,6 +24,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 #json_to_csv(json_path='/home/kirill/Documents/VSC/python_labs/data/lab05/samples/people.json', csv_path='/home/kirill/Documents/VSC/python_labs/data/lab05/out/people_from_json.csv')
     
 def csv_to_json(csv_path: str, json_path: str) -> None:
+    if (json_path[-5:]!='.json'): raise ValueError('Inappropiate output file.') 
     try: 
         with Path(csv_path).open('r', encoding="utf-8") as f:
             reader = csv.DictReader(f)
