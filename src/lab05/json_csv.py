@@ -41,4 +41,3 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 
 
 #csv_to_json(csv_path='/home/kirill/Documents/VSC/python_labs/data/lab05/samples/people.csv', json_path='/home/kirill/Documents/VSC/python_labs/data/lab05/out/people_from_csv_1.csv')
-
