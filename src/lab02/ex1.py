@@ -1,5 +1,6 @@
 import sys
 import os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from libs.arrays import flatten
 from libs.arrays import min_max
@@ -16,7 +17,7 @@ print("min_max")
 print(f"input: [3, -1, 5, 5, 0],  output: {min_max([3, -1, 5, 5, 0])}")
 print(f"input: [42],  output: {min_max([42])}")
 print(f"input: [-5, -2, -9],  output: {min_max([-5, -2, -9])}")
-#print(min_max([])) #-- error test
+# print(min_max([])) #-- error test
 print(f"input: [1.5, 2, 2.0, -3.1],  output: {min_max([1.5, 2, 2.0, -3.1])}")
 # unique_sorted
 print("unique_sorted")
@@ -64,7 +65,7 @@ print(f"input: (Петров Пётр Петрович, IKBO-12, 5.0),  output: 
 a = Tuple("  сидорова  анна   сергеевна ", "ABB-01", 3.999).format_record()
 print(f"input: (  сидорова  анна   сергеевна , ABB-01, 3.999),  output: {a}")
 
-#Tuples 2.0
+# Tuples 2.0
 print("tuples 2.0 ")
 a = format_record(("Иванов Иван Иванович", "BIVT-25", 4.6))
 print(f"input: (Иванов Иван Иванович, BIVT-25, 4.6),  output: {a}")
@@ -75,4 +76,4 @@ print(f"input: (Петров Пётр Петрович, IKBO-12, 5.0),  output: 
 a = format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999))
 print(f"input: (  сидорова  анна   сергеевна , ABB-01, 3.999),  output: {a}")
 
-#test commit
+# test commit

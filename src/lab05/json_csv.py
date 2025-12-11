@@ -31,8 +31,10 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     except FileNotFoundError:
         raise FileNotFoundError(f'No such .csv file.')
 
-#json_to_csv(json_path='/home/kirill/Documents/VSC/python_labs/data/lab05/samples/people.json', csv_path='/home/kirill/Documents/VSC/python_labs/data/lab05/out/people_from_json.csv')
-    
+
+# json_to_csv(json_path='/home/kirill/Documents/VSC/python_labs/data/lab05/samples/people.json', csv_path='/home/kirill/Documents/VSC/python_labs/data/lab05/out/people_from_json.csv')
+
+
 def csv_to_json(csv_path: str, json_path: str) -> None:
     if not csv_path.lower().endswith('.csv'):
         raise ValueError('Inappropriate input file. Expected .csv extension.')
@@ -56,4 +58,5 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     except FileNotFoundError:
         raise FileNotFoundError(f'No such .json file.')
 
-#csv_to_json(csv_path='/home/kirill/Documents/VSC/python_labs/data/lab05/samples/people.csv', json_path='/home/kirill/Documents/VSC/python_labs/data/lab05/out/people_from_csv_1.csv')
+
+# csv_to_json(csv_path='/home/kirill/Documents/VSC/python_labs/data/lab05/samples/people.csv', json_path='/home/kirill/Documents/VSC/python_labs/data/lab05/out/people_from_csv_1.csv')

@@ -2,20 +2,23 @@ import argparse
 import sys
 import os
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 try:
     from lab05.json_csv import json_to_csv, csv_to_json
     from lab05.csv_xlsx import csv_to_xlsx
 except ImportError:
-    print("Error: lab05/json_csv.py or lab05/cvs_xlsx not found or broken", file=sys.stderr)
+    print(
+        "Error: lab05/json_csv.py or lab05/cvs_xlsx not found or broken",
+        file=sys.stderr,
+    )
     sys.exit(1)
 
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="cli_convert",
-        description="Convert between JSON, CSV, and XLSX formats"
+        prog="cli_convert", description="Convert between JSON, CSV, and XLSX formats"
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -49,6 +52,7 @@ def main():
     except FileNotFoundError as e:
         print(f"Error: File not found — '{e}'", file=sys.stderr)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

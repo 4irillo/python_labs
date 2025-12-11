@@ -1,5 +1,6 @@
 import re
 
+
 def normalize(text: str) -> str:
     text = text.lower()
     text = text.replace('ё', 'е')
@@ -8,23 +9,27 @@ def normalize(text: str) -> str:
     text = text.strip()
     return text
 
+
 def tokenize(text: str) -> list[str]:
     if not text.strip():
         return []
     return text.split()
 
+
 def count_freq(tokens: list[str]) -> dict[str, int]:
     freq = dict()
     for token in tokens:
-        try: 
+        try:
             freq[token] += 1
         except:
             freq[token] = 1
     return dict(sorted(freq.items(), key=lambda item: (-item[1], item[0])))
 
+
 def top_n(freq: dict[str, int], n: int) -> list[tuple[str, int]]:
     sorted_items = sorted(freq.items(), key=lambda x: (-x[1], x[0]))
     return sorted_items[:n]
+
 
 def summarize(string: str, n: int) -> None:
     tokenized = tokenize(string)
@@ -34,8 +39,9 @@ def summarize(string: str, n: int) -> None:
     print(f"Топ-{n}:")
     k = top_n(unique_words, n)
     for token in k:
-        print("\t"+token[0] + ":" + str(token[1]))
+        print("\t" + token[0] + ":" + str(token[1]))
     return None
+
 
 '''print("normalize")
 print(f"'ПрИвЕт\nМИр\t' --> {normalize("ПрИвЕт\nМИр\t")}")

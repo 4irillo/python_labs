@@ -43,6 +43,7 @@ def row_sums(a):
         ans.append(sum)
     return ans
 
+
 def col_sums(a):
     # exceptions
     if not isinstance(a, list):

@@ -5,12 +5,14 @@ def min(a, b):
     # code
     return a if a < b else b
 
+
 def max(a, b):
     # exceptions
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
         raise TypeError("ParamError")
     # code
     return a if a > b else b
+
 
 def min_max(a):
     # exceptions
@@ -25,15 +27,17 @@ def min_max(a):
         mx = max(i, mx)
     return [mn, mx]
 
+
 def unique_sorted(a):
     # exceptions
     if not isinstance(a, list):
         raise TypeError("TypeError")
-    # code    
+    # code
     a = set(a)
     a = list(a)
     a.sort()
     return a
+
 
 def flatten(a):
     # exceptions

@@ -2,6 +2,7 @@ import argparse
 import sys
 import os
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 try:
@@ -9,6 +10,7 @@ try:
 except ImportError:
     print("Error: libs/text.py not found or broken", file=sys.stderr)
     sys.exit(1)
+
 
 def cat_file(input_path: str, number: bool = False) -> None:
     try:
@@ -36,7 +38,7 @@ def stats_text(input_path: str, top: int = 5) -> None:
 def main():
     parser = argparse.ArgumentParser(
         prog="cli_text",
-        description="CLI tools for text processing: cat and word stats (Lab 06)"
+        description="CLI tools for text processing: cat and word stats (Lab 06)",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -46,7 +48,9 @@ def main():
 
     stats_parser = subparsers.add_parser("stats", help="Show word frequency statistics")
     stats_parser.add_argument("--input", required=True, help="Path to input text file")
-    stats_parser.add_argument("--top", type=int, default=5, help="Number of top words to show (default: 5)")
+    stats_parser.add_argument(
+        "--top", type=int, default=5, help="Number of top words to show (default: 5)"
+    )
 
     args = parser.parse_args()
 
@@ -57,6 +61,7 @@ def main():
     else:
         parser.print_help()
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
