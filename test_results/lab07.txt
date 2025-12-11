@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.7, pytest-9.0.2, pluggy-1.6.0 -- /home/kirill/Documents/VSC/python_labs/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/kirill/Documents/VSC/python_labs
+configfile: pyproject.toml
+plugins: cov-7.0.0
+collecting ... collected 22 items
+
+tests/test_json_csv.py::test_json_to_csv_roundtrip PASSED                [  4%]
+tests/test_json_csv.py::test_csv_to_json_roundtrip PASSED                [  9%]
+tests/test_json_csv.py::test_json_to_csv_empty_file PASSED               [ 13%]
+tests/test_json_csv.py::test_csv_to_json_empty_file PASSED               [ 18%]
+tests/test_json_csv.py::test_json_to_csv_nonexistent_file PASSED         [ 22%]
+tests/test_json_csv.py::test_csv_to_json_nonexistent_file PASSED         [ 27%]
+tests/test_text.py::test_normalize[\u041f\u0440\u0418\u0432\u0415\u0442\n\u041c\u0418\u0440\t-\u043f\u0440\u0438\u0432\u0435\u0442 \u043c\u0438\u0440] PASSED [ 31%]
+tests/test_text.py::test_normalize[\u0451\u0436\u0438\u043a, \u0401\u043b\u043a\u0430-\u0435\u0436\u0438\u043a, \u0435\u043b\u043a\u0430] PASSED [ 36%]
+tests/test_text.py::test_normalize[Hello\r\nWorld-hello world] PASSED    [ 40%]
+tests/test_text.py::test_normalize[  \u0434\u0432\u043e\u0439\u043d\u044b\u0435   \u043f\u0440\u043e\u0431\u0435\u043b\u044b   -\u0434\u0432\u043e\u0439\u043d\u044b\u0435 \u043f\u0440\u043e\u0431\u0435\u043b\u044b] PASSED [ 45%]
+tests/test_text.py::test_normalize[-] PASSED                             [ 50%]
+tests/test_text.py::test_normalize[!@#$%^&*()-!@#$%^&*()] PASSED         [ 54%]
+tests/test_text.py::test_normalize[  \t\n  -] PASSED                     [ 59%]
+tests/test_text.py::test_tokenize[\u043f\u0440\u0438\u0432\u0435\u0442 \u043c\u0438\u0440-expected0] PASSED [ 63%]
+tests/test_text.py::test_tokenize[hello world!-expected1] PASSED         [ 68%]
+tests/test_text.py::test_tokenize[-expected2] PASSED                     [ 72%]
+tests/test_text.py::test_tokenize[   -expected3] PASSED                  [ 77%]
+tests/test_text.py::test_tokenize[\u0441\u043b\u043e\u0432\u043e, \u0441\u043b\u043e\u0432\u043e. \u0441\u043b\u043e\u0432\u043e!-expected4] PASSED [ 81%]
+tests/test_text.py::test_tokenize[one1 two2-expected5] PASSED            [ 86%]
+tests/test_text.py::test_count_freq PASSED                               [ 90%]
+tests/test_text.py::test_top_n PASSED                                    [ 95%]
+tests/test_text.py::test_top_n_tie_breaker PASSED                        [100%]
+
+============================== 22 passed in 0.10s ==============================

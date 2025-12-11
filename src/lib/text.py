@@ -1,16 +1,17 @@
 import re
 
-def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
-    if casefold: text = text.casefold()
-    if yo2e: text = text.replace('ё', 'е').replace('Ё', 'е')
-    text = re.sub(r"\s+", " ", text) # r"\s+" is a regexp for all special characters like \n, \t etc.
+def normalize(text: str) -> str:
+    text = text.lower()
+    text = text.replace('ё', 'е')
+    text = re.sub(r'[\r\n\t]', ' ', text)
+    text = re.sub(r' +', ' ', text)
     text = text.strip()
     return text
 
 def tokenize(text: str) -> list[str]:
-    regexp = r"[^\w-]" # r"[^\w-]" is a regexp for all characters except for letters, numbers and '-'
-    text = normalize(re.sub(regexp, " ", text))
-    return text.split(' ')
+    if not text.strip():
+        return []
+    return text.split()
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
     freq = dict()
@@ -22,13 +23,8 @@ def count_freq(tokens: list[str]) -> dict[str, int]:
     return dict(sorted(freq.items(), key=lambda item: (-item[1], item[0])))
 
 def top_n(freq: dict[str, int], n: int) -> list[tuple[str, int]]:
-    temp = []
-    cnt = 0
-    for token in freq.items():
-        temp.append(token)
-        cnt += 1
-        if (cnt == n or cnt == len(freq)): break
-    return temp
+    sorted_items = sorted(freq.items(), key=lambda x: (-x[1], x[0]))
+    return sorted_items[:n]
 
 def summarize(string: str, n: int) -> None:
     tokenized = tokenize(string)
