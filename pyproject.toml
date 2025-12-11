@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "python_labs"
 version = "0.1.0"
+description = "Лабораторные работы по курсу Python"
 
 [project.optional-dependencies]
 dev = [
@@ -12,3 +13,13 @@ dev = [
   "pytest-cov>=5.0",
   "black>=24.0",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-v --cov=src --cov-report=term-missing"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+skip-string-normalization = true
