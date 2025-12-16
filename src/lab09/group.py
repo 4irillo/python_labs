@@ -20,7 +20,7 @@ class Group:
             try:
                 reader = csv.DictReader(f)
                 for row in reader:
-                    if not row:  # пропускаем пустые строки
+                    if not row:
                         continue
                     students_data.append({
                         "fio": row.get("fio", "").strip(),
